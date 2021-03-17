@@ -13,7 +13,12 @@ class DressController extends Controller
      */
     public function index()
     {
-        return view('dressed.index');
+        $vestiti = Dress::all();
+
+        $data= [
+            'vestiti' => $vestiti
+        ];
+        return view('dressed.index', $data);
     }
 
     /**
