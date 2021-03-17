@@ -15,6 +15,10 @@ class CreateDressesTable extends Migration
     {
         Schema::create('dresses', function (Blueprint $table) {
             $table->id();
+            $table->sting('Marca', 16);
+            $table->sting('Modello',16);
+            $table->sting('Articolo',11);
+            $table->sting('Taglia',5);
             $table->timestamps();
         });
     }
