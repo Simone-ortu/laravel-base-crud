@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Dress;
+use CreateDressesTable;
 use Illuminate\Http\Request;
 
 class DressController extends Controller
@@ -39,7 +41,13 @@ class DressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $dressNew = New Dress();
+        $dressNew->Marca =$data['Marca'];
+        $dressNew->Modello =$data['Modello'];
+        $dressNew->save();
+
+        return redirect()->route('dresses.index');
     }
 
     /**
